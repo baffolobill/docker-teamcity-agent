@@ -2,7 +2,7 @@
 
 -	[`latest` (*Dockerfile*)](https://github.com/sashgorokhov/docker-teamcity-agent/blob/master/Dockerfile)
 
-[![](https://images.microbadger.com/badges/image/sashgorokhov/teamcity-agent.svg)](http://microbadger.com/images/sashgorokhov/teamcity-agent "Get your own image badge on microbadger.com")
+[![](https://images.microbadger.com/badges/image/sashgorokhov/teamcity-agent.svg)](http://microbadger.com/images/sashgorokhov/teamcity-agent "Get your own image badge on microbadger.com") [![Docker Pulls](https://img.shields.io/docker/pulls/sashgorokhov/teamcity-agent.svg)](https://hub.docker.com/r/sashgorokhov/teamcity-agent/)
 
 # TeamCity
 
