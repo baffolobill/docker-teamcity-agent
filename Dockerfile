@@ -1,7 +1,14 @@
 FROM java:8-jre
 MAINTAINER Alexander Gorokhov <sashgorokhov@gmail.com>
 
-RUN apt-get update && apt-get install -y --no-install-recommends unzip git \
+RUN apt-get update && apt-get install -y --no-install-recommends unzip git-core software-properties-common apt-transport-https build-essential \
+    && curl -fsSL https://apt.dockerproject.org/gpg | apt-key add - \
+    && add-apt-repository "deb https://apt.dockerproject.org/repo/ debian-$(lsb_release -cs) main" \
+    && apt-get update \
+    && apt-get install -y --no-install-recommends docker-engine=1.13.0-0~debian-jessie \
+            python-dev apt-transport-https ca-certificates python-setuptools \
+    && easy_install pip \
+    && pip install -U docker docker-compose \
     # Clean up packages
     && apt-get autoclean \
     && apt-get clean \
