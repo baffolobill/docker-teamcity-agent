@@ -1,7 +1,18 @@
 FROM java:8-jre
 MAINTAINER Alexander Gorokhov <sashgorokhov@gmail.com>
 
-RUN apt-get install -y unzip git
+RUN apt-get update && apt-get install -y --no-install-recommends unzip git \
+    # Clean up packages
+    && apt-get autoclean \
+    && apt-get clean \
+    && apt-get autoremove -y \
+    # Remove extraneous files
+    && rm -rf /var/lib/apt/lists/* \
+    && rm -rf /var/tmp/* \
+    && rm -rf /usr/share/man/* \
+    && rm -rf /usr/share/info/* \
+    && rm -rf /var/cache/man/* \
+    && rm -rf /tmp/*
 
 ENV SERVER_URL="" \
     AGENT_OWN_ADDRESS="" \
